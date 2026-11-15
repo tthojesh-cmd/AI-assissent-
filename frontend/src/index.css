@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'highlight.js/styles/github-dark.css';
+
+:root { color-scheme: dark; }
+html, body, #root { height: 100%; }
+body {
+  @apply font-sans text-slate-200 antialiased;
+  background: radial-gradient(900px 500px at 85% -10%, rgba(139,92,246,.22), transparent 60%),
+              radial-gradient(800px 500px at -10% 110%, rgba(37,99,235,.18), transparent 60%), #05060f;
+  background-attachment: fixed;
+}
+::-webkit-scrollbar { width: 8px; height: 8px } ::-webkit-scrollbar-thumb { background: #2a2f55; border-radius: 8px }
+@layer components {
+  .glass { @apply bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-2xl; }
+  .panel { @apply bg-[#0b0f26]/80 border border-white/10 rounded-2xl; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline focus-visible:outline-2 focus-visible:outline-violet-400; }
+  .btn-primary { @apply btn bg-gradient-to-r from-violet-600 to-blue-600 text-white hover:brightness-110; }
+  .btn-ghost { @apply btn bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10; }
+  .btn-danger { @apply btn bg-red-500/15 hover:bg-red-500/25 text-red-300 border border-red-500/30; }
+  .input { @apply w-full rounded-xl bg-black/30 border border-white/10 px-3 py-2 text-sm placeholder:text-slate-500 focus:outline-none focus:border-violet-400/70; }
+  .md { @apply text-[15px] leading-relaxed; }
+  .md p { @apply my-2 } .md ul { @apply list-disc pl-5 my-2 } .md ol { @apply list-decimal pl-5 my-2 }
+  .md h1,.md h2,.md h3 { @apply font-semibold mt-4 mb-2 text-white } .md h1 { @apply text-xl } .md h2 { @apply text-lg }
+  .md a { @apply text-violet-300 underline underline-offset-2 }
+  .md pre { @apply my-3 rounded-xl overflow-x-auto border border-white/10 bg-[#0d1117] p-0 }
+  .md pre code { @apply font-mono text-[13px] block p-3 }
+  .md :not(pre) > code { @apply font-mono text-[13px] bg-white/10 rounded px-1.5 py-0.5 }
+  .md table { @apply my-3 text-sm border-collapse } .md th,.md td { @apply border border-white/10 px-3 py-1.5 } .md th { @apply bg-white/5 }
+  .md blockquote { @apply border-l-2 border-violet-400/60 pl-3 text-slate-400 }
+}
+@media (prefers-reduced-motion: reduce) { * { animation-duration: .01ms !important; transition-duration: .01ms !important; } }

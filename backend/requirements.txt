@@ -1,0 +1,14 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+sqlalchemy>=2.0
+python-dotenv>=1.0
+pyjwt>=2.8
+openai>=1.40
+httpx>=0.27
+beautifulsoup4>=4.12
+reportlab>=4.0
+pypdf>=4.0
+python-multipart>=0.0.9
+email-validator>=2.1
+pytest>=8.0
+# For PostgreSQL in production: pip install psycopg2-binary
